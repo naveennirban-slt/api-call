@@ -56,8 +56,10 @@
         }
     </style>
 </head>
+<script src="script.js"></script>
 
 <body>
+    
     <h1 class="name">Post List</h1>
     <br>
     <br>
@@ -68,12 +70,24 @@
         <ul id="mylist"></ul>
     </div>
     <br>
+  
     <script>
 
-        function onclick() {
+
+ {
 
 
-            let inputValue =5;
+    var inputValue;
+    var url = document.location.href,
+        params = url.split('?')[1].split('&'),
+        data = {}, tmp;
+    for (var i = 0, l = params.length; i < l; i++) {
+         tmp = params[i].split('=');
+         data[tmp[0]] = tmp[1];
+    }
+           
+    inputValue =data.Id;
+        
             //document.querySelector('list').id;
 
             if (inputValue === null) {
